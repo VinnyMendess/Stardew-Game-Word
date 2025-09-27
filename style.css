@@ -1,0 +1,173 @@
+/*Animação das nuvens foi retirada de um código já existente
+https://codepen.io/jsemedo/pen/LYgGvyQ
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: url("https://assets.codepen.io/7237686/cursor.gif"), auto;
+  font-family: svFont;
+}
+@font-face {
+  font-family: svFont;
+  src: url(https://assets.codepen.io/7237686/rainyhearts.woff) format("woff");
+}
+
+
+body {
+  background-image: url("https://assets.codepen.io/7237686/bg.png?format=auto");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: svFont;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 2rem;
+
+ 
+}
+.marquee {
+  z-index: -10;
+  position: fixed;
+  opacity: 0.8;
+  display: flex;
+  animation: marquee 150s linear infinite running;
+}
+
+.marquee .clouds {
+  width: 100%;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+body {
+    background-color: #87ceeb; 
+    overflow: hidden; 
+}
+
+.marquee {
+    z-index: -10;
+    position: fixed;
+    opacity: 0.8;
+    display: flex;
+    animation: marquee 150s linear infinite running;
+    height: 100vh;
+    width: 200%;
+}
+
+
+.clouds img {
+    width: 100vw;
+    display: block;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/*Animação acaba aqui*/
+
+.imagem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vh;
+    margin-bottom: 120px;
+    
+    
+}
+.imagem img{
+    width: 100%;
+    margin-bottom: 0px;
+     
+    
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 500px;
+    height: 100%;
+}
+.container .p1{
+    font-size: 4rem;
+    color: #331f28 ;
+    text-shadow: #ce9c5f;
+    font-weight: 800;
+    
+}
+.container .p2{
+    /*Inicio Codigo Retirado Borda*/
+    font-size: 2rem;
+    font-weight: 500;
+    border-width: 20px;
+    border-style: solid;
+    border-image-source: url("https://assets.codepen.io/7237686/bordertop.png");
+    border-image-slice: 24 22;
+    border-image-repeat: round;
+    background-color: #ffd390;
+    /*Final parte do codigo retirato*/
+    
+}
+
+
+input{
+    
+    border-width: 20px;
+    border-style: solid;
+    border-image-source: url("https://assets.codepen.io/7237686/tooltipborder.png");
+    border-image-slice: 24 22;
+    border-image-repeat: round;
+    background-color: #ffd390;
+    text-align: center;
+    width: 355px;
+    font-size: 2rem;
+    color: #6e005a;
+    
+    
+}
+
+button{
+    border-width: 20px;
+    border-style: solid;
+    border-image-source: url("https://assets.codepen.io/7237686/tooltipborderbottom.png");
+    border-image-slice: 24 22;
+    border-image-repeat: round;
+    background-color: #ffd390;
+    color: #3a2914;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;   
+}
+button:hover{
+    background-color: #ce9c5f;
+}
+
+.resultado{
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+    color: #000000;
+    font-weight: 600;
+}
+
+
+
+
+

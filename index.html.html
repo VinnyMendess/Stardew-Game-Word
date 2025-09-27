@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    
+    
+
+    <div class="marquee">
+        <div class="clouds">
+            <img src="https://assets.codepen.io/7237686/clouds.png?format=auto" alt="clouds" />
+        </div>
+        <div class="clouds">
+            <img src="https://assets.codepen.io/7237686/clouds.png?format=auto" alt="clouds" />
+        </div>
+        <div class="clouds">
+            <img src="https://assets.codepen.io/7237686/clouds.png?format=auto" alt="clouds" />
+        </div>
+        <div class="clouds">
+            <img src="https://assets.codepen.io/7237686/clouds.png?format=auto" alt="clouds" />
+        </div>
+        <div class="clouds">
+            <img src="https://assets.codepen.io/7237686/clouds.png?format=auto" alt="clouds" />
+        </div>
+        <div class="clouds">
+            <img src="https://assets.codepen.io/7237686/clouds.png?format=auto" alt="clouds" />
+        </div>
+    </div>
+
+    <div class="definicao" id="div_exibir_definicao"></div>
+
+    
+    <div class="container">
+        <div class="imagem">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/f/fd/Logo_of_Stardew_Valley.png" alt="">
+            <p class="p1">Game Word!</p>
+        </div>
+       <div class="resultado" id="div_exibir"></div> 
+
+      <p class="p2">Digite uma letra por vez!</p>
+      <input type="text" id="input_letra" maxlength="1" />
+
+      <button onclick="verificar()">Verificar Letra</button>
+    </div>
+
+    
+  </body>
+</html>
+
+<script>
+  var palavra = "aurélio";
+  var palavra_top = palavra;
+  var contadora = palavra.length;
+  var letra_anterior = "";
+
+  function mostrar() {
+    div_exibir_definicao.innerHTML = `Palavra secreta definida! Descubra todos ${palavra.length} caracteres!`;
+  }
+
+  function verificar() {
+    var letra = input_letra.value;
+
+    if (letra == letra_anterior) {
+      div_exibir.innerHTML = `Essa letra já foi digitada antes`;
+    } else {
+      if (palavra.includes(letra)) {
+        contadora = contadora - 1;
+
+        palavra = palavra.replace(letra, "");
+
+        div_exibir.innerHTML = `O caractere ${letra} aparece na palavra secreta!
+            Faltam ${contadora} caracteres
+            `;
+      } else if (letra == letra.toUpperCase()) {
+        div_exibir.innerHTML = `Digite uma letra minuscula`;
+      } else {
+        div_exibir.innerHTML = `Letra não existe na palavra`;
+      }
+    }
+    if (contadora == 0) {
+      div_exibir.innerHTML = `Parabéns você descobriu todas as letras da palavra secreta ${palavra_top}`;
+    }
+    letra_anterior = letra;
+  }
+
+  // == palavra || letra.includes('u') == palavra
+  //        || letra.includes('r') == palavra || letra.includes('e') == palavra ||
+  //        letra.includes('l') == palavra || letra.includes('i') == palavra || letra.includes('o')
+</script>
